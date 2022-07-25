@@ -10,14 +10,14 @@ type AccordionProps = {
 export default function Accordion({ title, info }: AccordionProps) {
   const [showInfo, setShowInfo] = useState(false);
   return (
-    <article className='d-flex flex-column outline-info'>
-      <header className="d-flex justify-content-between align-items-baseline my-4">
+    <article className='d-flex flex-column'>
+      <header className="d-flex justify-content-between my-4">
         <h5 className="col-7">{title}</h5>
-        <Button className='d-flex outline-info' onClick={() => setShowInfo(!showInfo)}>
+        <Button variant="outline-info" onClick={() => setShowInfo(!showInfo)}>
           {showInfo ? <AiOutlineMinus /> : <AiOutlinePlus />}
         </Button>
       </header>
-      {showInfo && <p className="outline-info">{info}</p>}
+      {showInfo && <p>{info}</p>}
     </article>
   );
 };

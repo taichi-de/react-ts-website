@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Card, Container } from "react-bootstrap";
-import people from "../reviewData";
+import people from "../data/reviewData";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function Review() {
@@ -32,7 +32,7 @@ export default function Review() {
 
   return (
     <Container>
-      <Card className="bg-dark h-100 w-50 text-white">
+      <Card className="bg-dark w-50 text-white mx-auto">
         <Card.Img
           variant="top"
           src={image}

@@ -1,8 +1,3 @@
-type Category = {
-  category: string;
-  index: number;
-};
-
 type CategoriesProps = {
   categories: string[];
 };

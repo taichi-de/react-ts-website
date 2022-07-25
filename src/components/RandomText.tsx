@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-import data from "../textData";
+import data from "../data/textData";
 
 export default function RandomText() {
   const [count, setCount] = useState<number>(0);
@@ -8,7 +8,7 @@ export default function RandomText() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    let amount = Math.floor((count));
+    let amount = Number((count));
     if (count <= 0) {
       amount = 1;
     }
@@ -18,9 +18,9 @@ export default function RandomText() {
     setText(data.slice(0, amount));
   };
   return (
-    <section className="section-center">
-      <h3>tired of boring lorem ipsum?</h3>
-      <form className="lorem-form" onSubmit={handleSubmit}>
+    <section className="">
+      <h4>tired of boring lorem ipsum?</h4>
+      <form className="" onSubmit={handleSubmit}>
         <label htmlFor="amount">paragraphs: </label>
         <input
           type="number"
@@ -28,11 +28,11 @@ export default function RandomText() {
           id="amount"
           value={count}
           onChange={(e) => setCount(Number(e.target.value))}
-          className="bg-dark color-blue"
+          className="mx-2"
         />
-        <Button variant="secondary">generate</Button>
+        <Button variant="outline-warning" type="submit">generate</Button>
       </form>
-      <article className="lorem-text">
+      <article className="my-4">
         {text.map((item, index) => {
           return <p key={index}>{item}</p>;
         })}
