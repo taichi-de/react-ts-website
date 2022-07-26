@@ -1,13 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 type AlertProps = {
-    type: string
-    msg: string
-    removeAlert: () => void
-    list: void
-}
+  type: string;
+  msg: string;
+  removeAlert: () => void;
+  list: void;
+};
 
-export default function Alert ({ type, msg, removeAlert, list }: AlertProps) {
+export default function Alert({ type, msg, removeAlert, list }: AlertProps) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       removeAlert();
@@ -15,5 +15,4 @@ export default function Alert ({ type, msg, removeAlert, list }: AlertProps) {
     return () => clearTimeout(timeout);
   }, [list]);
   return <p className={`alert alert-${type}`}>{msg}</p>;
-};
-
+}

@@ -3,7 +3,7 @@ type menuItem = {
   title: string;
   img: string;
   desc: string;
-  price: number;
+  price: number;　
 };
 
 type MenuProps = {
