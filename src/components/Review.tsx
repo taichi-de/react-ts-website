@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Card, Container } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import people from "../data/reviewData";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -31,7 +31,8 @@ export default function Review() {
   };
 
   return (
-    <Container>
+    <section className="mb-4 p-4">
+      <h2>Reviews</h2>
       <Card className="bg-dark w-50 text-white mx-auto">
         <Card.Img
           variant="top"
@@ -56,6 +57,6 @@ export default function Review() {
           </Button>
         </div>
       </Card>
-    </Container>
+    </section>
   );
 }

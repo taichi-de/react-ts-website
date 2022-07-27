@@ -3,27 +3,27 @@ type menuItem = {
   title: string;
   img: string;
   desc: string;
-  price: number;　
+  price: number;
 };
 
 type MenuProps = {
   menuItems: menuItem[];
 };
 
-const Menu = ({ menuItems }: MenuProps) => {
+export default function Menu ({ menuItems }: MenuProps) {
   return (
-    <div className="section-center">
+    <div>
       {menuItems.map((menuItem) => {
         const { id, title, img, desc, price } = menuItem;
         return (
-          <article key={id} className="menu-item">
-            <img src={img} alt={title} className="photo" />
-            <div className="item-info">
+          <article key={id}>
+            <img src={img} alt={title}/>
+            <div>
               <header>
                 <h4>{title}</h4>
-                <h4 className="price">€{price}</h4>
+                <h4>€{price}</h4>
               </header>
-              <p className="item-text">{desc}</p>
+              <p>{desc}</p>
             </div>
           </article>
         );
@@ -31,5 +31,3 @@ const Menu = ({ menuItems }: MenuProps) => {
     </div>
   );
 };
-
-export default Menu;

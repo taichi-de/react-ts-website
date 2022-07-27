@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Button } from "react-bootstrap";
 import { FaBars } from "react-icons/fa";
 import { links, social } from "../data/navbarData";
 
@@ -30,6 +29,7 @@ export default function Navbar() {
           <button
             className="nav-toggle"
             onClick={toggleLinks}
+            data-testid="toggle"
           >
             <FaBars />
           </button>

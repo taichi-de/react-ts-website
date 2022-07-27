@@ -6,17 +6,16 @@ type FilterItemProps = {
   filterItems: (category: string) => void;
 };
 
-const Categories = (
+export default function Categories (
   { categories }: CategoriesProps,
   { filterItems }: FilterItemProps
-) => {
+){
   return (
-    <div className="btn-container">
+    <div>
       {categories.map((category, index) => {
         return (
           <button
             type="button"
-            className="filter-btn"
             key={index}
             onClick={() => filterItems(category)}
           >
@@ -27,5 +26,3 @@ const Categories = (
     </div>
   );
 };
-
-export default Categories;
